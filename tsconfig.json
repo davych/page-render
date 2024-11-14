@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "target": "es2021",
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+    "strict": true  
+  },
+  "include": ["src/**/*"]
+}

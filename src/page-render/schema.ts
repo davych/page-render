@@ -1,6 +1,5 @@
-
-{
-  layout: {
+export default [
+  {
     // items are chilren for layout component
     items: [
       {
@@ -23,13 +22,13 @@
         }
       }
     ],
-    component: 'flex'.
+    component: 'flex',
     props: {
       // props will as props pass to component 
     }
   },
-  layout: {
-    component: 'flex'.
+ {
+    component: 'flex',
     props: {
       // props will as props pass to component 
     },
@@ -37,9 +36,9 @@
       component: 'table',
       props: {},
       config: {
-        rtkQuery: function,
+        rtkQuery: () => {}
       }
     }
   }
-}
+]
  
