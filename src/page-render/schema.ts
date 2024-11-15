@@ -6,9 +6,21 @@ export default [
         component: 'search',
         items: [
           {
-            component: 'input',
+            component: 'Input',
             id: '',
-            formItemProps: {},
+            formItemProps: {
+              label: 'Name',
+              name: 'name'
+            },
+            componentProps: {}
+          },
+          {
+            component: 'Input',
+            id: '',
+            formItemProps: {
+              label: 'Age',
+              name: 'age'
+            },
             componentProps: {}
           }
         ],
@@ -22,19 +34,36 @@ export default [
         }
       }
     ],
-    component: 'flex',
+    component: 'Flex',
     props: {
       // props will as props pass to component 
     }
   },
  {
-    component: 'flex',
+    component: 'Row',
     props: {
       // props will as props pass to component 
     },
     item: {
-      component: 'table',
-      props: {},
+      component: 'Table',
+      props: {
+        style:{width: '100%'},
+        columns: [
+          {
+            // antd table column props
+            title: 'Name',
+            dataIndex: 'name',
+            key: 'name'
+
+          },
+          {
+            // antd table column props
+            title: 'Age',
+            dataIndex: 'age',
+            key: 'age'
+          }
+        ]
+      },
       config: {
         rtkQuery: () => {}
       }
