@@ -10,16 +10,17 @@ interface FormItem {
 }
 
 interface SearchFormProps {
-    items: FormItem[];
+    config: {
+        items: FormItem[];
+        props?: any;
+        [key: string]: any;
+    },
+    onFinish: (values: any) => void;
+   
 }
 
-const componentMap: { [key: string]: any } = {
-    input: Input,
-    // Add other components here as needed
-};
-
-const SearchForm: React.FC<SearchFormProps> = ({ items }) => {
-    console.log('items:', items);
+const SearchForm: React.FC<SearchFormProps> = ({ config,onFinish }) => {
+    const { items, props } = config;
     const [form] = Form.useForm();
 
     const renderFormItem = (item: FormItem) => {
@@ -33,12 +34,8 @@ const SearchForm: React.FC<SearchFormProps> = ({ items }) => {
         );
     };
 
-    const onFinish = (values: any) => {
-        console.log('Form values:', values);
-    };
-
     return (
-        <Form form={form} onFinish={onFinish}>
+        <Form form={form} onFinish={onFinish} {...props}>
             {items.map(renderFormItem)}
             <Form.Item>
                 <Button type="primary" htmlType="submit">
